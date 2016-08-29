@@ -2,6 +2,9 @@
 <cfparam name="form.Titledel" default=""/>
 <cfparam name="form.Authordel" default=""/>
 
+<h1>Blog löschen</h1>
+
+<p>Bitte geben Sie den Titel und Author des BLogs an, welcher Sie löschen wollen:<br></p>
 <cfform action="/index.cfm/myHandler">
 <table>
 	<tr>
