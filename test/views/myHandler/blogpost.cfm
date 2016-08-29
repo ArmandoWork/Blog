@@ -11,6 +11,7 @@
 		</div>
 		<div>
 			<p><a href="##">#blog.Category#</a></p>
+			<a href="/index.cfm/myHandler">Zurück zu dem Blog</a>
 		</div>
 	</div>
 </cfoutput>

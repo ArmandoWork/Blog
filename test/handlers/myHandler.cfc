@@ -41,10 +41,6 @@ component{
 		event.setView( "myHandler/index" );
 	}
 
-	function addBlog(var title, var Author, var Content, var Category){
-
-		getModel('mymodel').addBlog(title,Author,Content,Category);
-	}	
 
 	/**
     * foo  

@@ -23,10 +23,14 @@ component accessors="true"{
 		return myquery;
 	}
 	
-	function addblog(var title, var Author, var Content, var Category)
+	function addblog(T, A, Co, Cat)
 	{
-		var time = now();
 		var myQuery = queryExecute(
-			"INSERT INTO blog(blogid, title, Author, Content, Category, dateposted) VALUES ("", title, Author, Content, Category, time) ");
+			'INSERT INTO blog(title, Author, Content, Category, dateposted, blogpostid) VALUES ("#arguments.T#", "#arguments.A#", "#arguments.Co#", "#arguments.Cat#", now(), 0) ');
+	}
+
+	function deleteBlog(T, A)
+	{
+		var myQuery = queryExecute('DELETE FROM blog WHERE title="#arguments.T#" and Author="#arguments.A#"');
 	}
 }

@@ -1,9 +1,10 @@
+<cfparam name="form.submitadd" default="0"/>
 <cfparam name="form.Title" default=""/>
 <cfparam name="form.Author" default=""/>
 <cfparam name="form.Content" default=""/>
 <cfparam name="form.Category" default=""/>
 
-<cfform action="/views/myHandler/">
+<cfform action="/index.cfm/myHandler">
 <table>
 	<tr>
 		<td><label for="Title">Titel:</label></td>
@@ -25,6 +26,7 @@
 		<td><cfinput name="submit" type="submit"/></td>
 	</tr>
 </table>
+<input type="hidden" name="submitadd" value="1" />
 </cfform>
 
 
