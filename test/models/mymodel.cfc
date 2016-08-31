@@ -33,4 +33,10 @@ component accessors="true"{
 	{
 		var myQuery = queryExecute('DELETE FROM blog WHERE title="#arguments.T#" and Author="#arguments.A#"');
 	}
+
+	function editblog(BID, T, A, Co, Cat)
+	{
+		var myQuery = queryExecute(
+			'update blog set title = "#arguments.T#", Author = "#arguments.A#", Content = "#arguments.Co#", Category = "#arguments.Cat#" where idblog = #arguments.BID#')
+	}
 }

@@ -6,7 +6,7 @@
 
 <h1>Blog hinzufügen</h1><br>
 
-<cfform action="/index.cfm/myHandler">
+<cfform action="/index.cfm/myHandler/addBlog.cfm">
 <table>
 	<tr>
 		<td style="padding: 5px 0 5px 0;"><label for="Title">Titel*:</label></td>
@@ -30,5 +30,22 @@
 </table>
 <input type="hidden" name="submitadd" value="1" />
 </cfform>
+
+<cfscript>
+if(form.submitadd)
+{
+	if( len(trim(form.Title)) && len(trim(form.Author)) && len(trim(form.Content)) && len(trim(form.Category)))
+	{
+		getModel('mymodel').addBlog(form.Title, form.Author, form.Content, form.Category);
+		writeOutput("Blog erstellt");
+	}
+	else
+	{
+		writeOutput("Fehler beim erstellen des Blogs!");
+	}
+}
+</cfscript>
+<br>
+<a href="/index.cfm/myHandler">Zurück zu dem Blog</a>
 
 

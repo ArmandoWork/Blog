@@ -41,6 +41,12 @@ component{
 		event.setView( "myHandler/index" );
 	}
 
+	function deleteBlog( event, rc, prc ){
+    	prc.myresult = getModel('mymodel').getBlog();
+    	
+    	//writeDump(myresults);abort;
+		event.setView( "myHandler/deleteBlog" );
+	}
 
 	/**
     * foo  

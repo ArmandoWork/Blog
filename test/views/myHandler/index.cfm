@@ -1,33 +1,4 @@
-<cfparam name="form.submitadd" default="0"/>
-<cfparam name="form.submitdel" default="0"/>
-<cfparam name="form.Title" default=""/>
-<cfparam name="form.Titledel" default=""/>
-<cfparam name="form.Author" default=""/>
-<cfparam name="form.Authordel" default=""/>
-<cfparam name="form.Content" default=""/>
-<cfparam name="form.Category" default=""/>
 <cfset blogs = EntityLoad('Blog') />
-
-<cfscript>
-if(form.submitadd)
-{
-	if( len(trim(form.Title)) && len(trim(form.Author)) && len(trim(form.Content)) && len(trim(form.Category)))
-	{
-		getModel('mymodel').addBlog(form.Title, form.Author, form.Content, form.Category);
-	}
-}
-	
-if (form.submitdel)
-{
-	for (row in prc.myresult)
-	{
-		if (prc.myresult.title == form.Titledel && prc.myresult.Author == form.Authordel)
-		{
-			getModel('mymodel').deleteBlog(form.Titledel, form.Authordel);
-		}
-	}
-}
-</cfscript>
 
 <h1>Blog</h1>
 
